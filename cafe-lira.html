@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Lira | カフェ リラ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+JP:wght@300;400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-deep:   #2c4a3e;
+      --green-mid:    #3d6b5a;
+      --green-soft:   #5a8a72;
+      --green-pale:   #a8c5b5;
+      --green-mist:   #d4e8df;
+      --green-foam:   #eef6f1;
+      --white:        #fdfefe;
+      --cream:        #f8f5f0;
+      --text-dark:    #1e3028;
+      --text-body:    #4a6355;
+      --text-muted:   #7a9a8a;
+      --border:       rgba(90,138,114,0.2);
+      --border-soft:  rgba(90,138,114,0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text-dark);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--green-foam); }
+    ::-webkit-scrollbar-thumb { background: var(--green-pale); border-radius: 2px; }
+
+    /* ── ORGANIC BLOB DECO ── */
+    .blob {
+      position: absolute;
+      border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+      pointer-events: none;
+      opacity: 0.13;
+    }
+
+    /* ── LEAF DIVIDER ── */
+    .leaf-divider {
+      display: flex; align-items: center; gap: 16px;
+      justify-content: center; margin-bottom: 52px;
+    }
+    .leaf-divider::before, .leaf-divider::after {
+      content: ''; width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green-pale));
+    }
+    .leaf-divider::after { background: linear-gradient(90deg, var(--green-pale), transparent); }
+    .leaf-divider span { color: var(--green-soft); font-size: 16px; }
+
+    /* ══════════════════════════
+       NAV
+    ══════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(253,254,254,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 400;
+      color: var(--green-deep);
+      text-decoration: none; letter-spacing: 0.06em;
+    }
+    .nav-logo em { font-style: italic; color: var(--green-soft); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--green-deep); }
+
+    @media (max-width: 680px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+    }
+
+    /* ══════════════════════════
+       HERO
+    ══════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      background: var(--green-foam);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* large decorative circle */
+    .hero-circle {
+      position: absolute;
+      right: -120px; top: 50%; transform: translateY(-50%);
+      width: 580px; height: 580px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--green-mist) 0%, var(--green-foam) 70%);
+      border: 1px solid var(--border);
+    }
+    .hero-circle-inner {
+      position: absolute; inset: 32px; border-radius: 50%;
+      border: 1px solid var(--border-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 180px;
+      filter: saturate(0.6);
+    }
+
+    .hero-content {
+      padding: 120px 64px 80px;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase;
+      color: var(--green-soft);
+      border-left: 2px solid var(--green-pale);
+      padding-left: 14px; margin-bottom: 32px;
+      animation: fadeRight 1s ease both;
+    }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.1; letter-spacing: -0.01em;
+      color: var(--green-deep);
+      margin-bottom: 28px;
+      animation: fadeRight 1s 0.12s ease both;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--green-soft);
+      display: block;
+    }
+    .hero-desc {
+      font-size: 14px; line-height: 2.2;
+      color: var(--text-body); letter-spacing: 0.04em;
+      max-width: 380px; margin-bottom: 48px;
+      animation: fadeRight 1s 0.24s ease both;
+    }
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      animation: fadeRight 1s 0.36s ease both;
+    }
+
+    @keyframes fadeRight {
+      from { opacity: 0; transform: translateX(-24px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* badge tag */
+    .hero-badge {
+      position: absolute; bottom: 60px; right: 60px; z-index: 3;
+      width: 100px; height: 100px; border-radius: 50%;
+      background: var(--green-deep);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      animation: spin 20s linear infinite;
+    }
+    .hero-badge svg {
+      position: absolute; inset: 0;
+      animation: spin 20s linear infinite;
+    }
+    .hero-badge-center {
+      font-size: 22px; animation: unspin 20s linear infinite;
+    }
+    @keyframes spin   { to { transform: rotate(360deg); } }
+    @keyframes unspin { to { transform: rotate(-360deg); } }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-circle { display: none; }
+      .hero-content { padding: 110px 24px 60px; }
+      .hero-badge { display: none; }
+    }
+
+    /* ══════════════════════════
+       BUTTONS
+    ══════════════════════════ */
+    .btn-green {
+      display: inline-block; padding: 15px 40px;
+      background: var(--green-deep); color: var(--white);
+      font-family: 'Noto Serif JP', serif; font-size: 12px;
+      letter-spacing: 0.2em; text-decoration: none;
+      border: 1.5px solid var(--green-deep);
+      position: relative; overflow: hidden;
+      transition: color 0.4s;
+      cursor: pointer;
+    }
+    .btn-green::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--green-mid);
+      transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .btn-green:hover::before { transform: translateY(0); }
+    .btn-green span { position: relative; z-index: 1; }
+
+    .btn-ghost {
+      display: inline-block; padding: 15px 36px;
+      background: transparent; color: var(--green-deep);
+      font-size: 12px; letter-spacing: 0.2em; text-decoration: none;
+      border: 1.5px solid var(--green-pale);
+      transition: all 0.3s; cursor: pointer;
+    }
+    .btn-ghost:hover {
+      border-color: var(--green-deep);
+      background: var(--green-foam);
+    }
+
+    /* ══════════════════════════
+       SECTION COMMONS
+    ══════════════════════════ */
+    .section-label {
+      font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+      color: var(--green-soft); display: block; margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 400; color: var(--green-deep); letter-spacing: 0.02em;
+    }
+    .section-title em { font-style: italic; color: var(--green-soft); }
+
+    /* ══════════════════════════
+       STORY BAND
+    ══════════════════════════ */
+    .story-band {
+      padding: 100px 48px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .story-visual {
+      position: relative;
+    }
+    .story-box {
+      background: var(--green-foam);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      height: 380px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 100px;
+      position: relative; overflow: hidden;
+    }
+    .story-box::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--green-mist), transparent 60%);
+    }
+    .story-box-offset {
+      position: absolute; bottom: -20px; right: -20px;
+      width: 120px; height: 120px;
+      background: var(--green-deep);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px; color: white;
+      border: 4px solid var(--white);
+    }
+    .story-text .section-title { margin-bottom: 28px; }
+    .story-body {
+      font-size: 14px; line-height: 2.3;
+      color: var(--text-body); margin-bottom: 36px;
+    }
+    .story-tags {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .tag {
+      padding: 7px 18px; border: 1px solid var(--border);
+      font-size: 11px; letter-spacing: 0.12em;
+      color: var(--green-soft); border-radius: 999px;
+      background: var(--green-foam);
+    }
+
+    @media (max-width: 760px) {
+      .story-band { grid-template-columns: 1fr; gap: 40px; padding: 70px 24px; }
+      .story-box { height: 260px; }
+    }
+
+    /* ══════════════════════════
+       SERVICES
+    ══════════════════════════ */
+    .services {
+      padding: 100px 48px;
+      background: var(--green-foam);
+      position: relative; overflow: hidden;
+    }
+    .services::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green-pale), transparent);
+    }
+
+    .services-header { text-align: center; margin-bottom: 64px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px; max-width: 1060px; margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 44px 36px 36px;
+      border: 1px solid var(--border-soft);
+      position: relative; overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green-mid), var(--green-pale));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(44,74,62,0.1);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .sc-icon {
+      font-size: 36px; margin-bottom: 20px; display: block;
+    }
+    .sc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 11px; letter-spacing: 0.3em; color: var(--green-pale);
+      margin-bottom: 10px; display: block;
+    }
+    .sc-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; color: var(--green-deep);
+      margin-bottom: 14px; letter-spacing: 0.02em;
+    }
+    .sc-desc {
+      font-size: 13px; line-height: 2.1;
+      color: var(--text-body);
+    }
+
+    @media (max-width: 680px) {
+      .services { padding: 70px 20px; }
+    }
+
+    /* ══════════════════════════
+       BOTANICAL MARQUEE
+    ══════════════════════════ */
+    .marquee-wrap {
+      overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 18px 0; background: var(--white);
+    }
+    .marquee-track {
+      display: flex; gap: 0;
+      animation: marquee 28s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 20px;
+      padding: 0 32px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 15px;
+      color: var(--text-muted); letter-spacing: 0.08em;
+    }
+    .marquee-dot { color: var(--green-pale); font-style: normal; font-size: 8px; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ══════════════════════════
+       PRICING
+    ══════════════════════════ */
+    .pricing {
+      padding: 100px 48px;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .pricing-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 56px; flex-wrap: wrap; gap: 20px;
+    }
+    .pricing-note {
+      font-size: 12px; color: var(--text-muted);
+      letter-spacing: 0.05em; line-height: 1.8;
+    }
+
+    .pricing-tabs {
+      display: flex; gap: 0; margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ptab {
+      padding: 12px 28px; font-size: 11px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted);
+      cursor: pointer; border-bottom: 2px solid transparent;
+      margin-bottom: -1px; transition: all 0.25s; background: none; border-top: none; border-left: none; border-right: none;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .ptab.active {
+      color: var(--green-deep); border-bottom-color: var(--green-deep);
+    }
+
+    .ptab-panel { display: none; }
+    .ptab-panel.active { display: block; }
+
+    .price-list { border: 1px solid var(--border); overflow: hidden; }
+    .price-row {
+      display: grid; grid-template-columns: 1fr auto auto;
+      align-items: center; gap: 24px;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border-soft);
+      transition: background 0.2s;
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-row:hover { background: var(--green-foam); }
+    .price-row.header {
+      background: var(--green-deep); color: var(--white);
+      font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+      padding: 14px 32px;
+    }
+    .price-row.header:hover { background: var(--green-deep); }
+
+    .pr-name { font-size: 14px; color: var(--text-dark); letter-spacing: 0.04em; }
+    .pr-desc { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+    .pr-time {
+      font-size: 11px; color: var(--text-muted);
+      white-space: nowrap; letter-spacing: 0.05em;
+    }
+    .pr-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px; color: var(--green-deep);
+      white-space: nowrap; letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 600px) {
+      .pricing { padding: 70px 20px; }
+      .price-row { grid-template-columns: 1fr auto; gap: 12px; padding: 18px 20px; }
+      .pr-time { display: none; }
+      .ptab { padding: 10px 16px; font-size: 10px; }
+    }
+
+    /* ══════════════════════════
+       RESERVATION
+    ══════════════════════════ */
+    .reservation {
+      padding: 110px 48px;
+      background: var(--green-deep);
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+
+    /* large botanical deco */
+    .res-blob {
+      position: absolute; width: 500px; height: 500px;
+      border-radius: 50%; opacity: 0.06;
+      background: var(--white);
+    }
+    .res-blob.a { top: -200px; left: -150px; }
+    .res-blob.b { bottom: -200px; right: -150px; }
+
+    .res-tag {
+      display: inline-block;
+      border: 1px solid rgba(168,197,181,0.4);
+      color: var(--green-pale);
+      font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase;
+      padding: 8px 24px; margin-bottom: 36px;
+    }
+    .res-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 7vw, 64px);
+      color: var(--white); letter-spacing: 0.04em;
+      line-height: 1.15; margin-bottom: 20px;
+    }
+    .res-title em { font-style: italic; color: var(--green-mist); }
+    .res-sub {
+      font-size: 14px; color: var(--green-pale);
+      line-height: 2.2; margin-bottom: 52px;
+      letter-spacing: 0.06em;
+    }
+    .res-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 72px; }
+
+    .btn-white {
+      display: inline-block; padding: 16px 48px;
+      background: var(--white); color: var(--green-deep);
+      font-size: 12px; letter-spacing: 0.22em; text-decoration: none;
+      border: 1.5px solid var(--white);
+      transition: all 0.35s; cursor: pointer;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .btn-white:hover { background: var(--green-foam); }
+
+    .btn-ghost-w {
+      display: inline-block; padding: 16px 44px;
+      background: transparent; color: var(--green-mist);
+      font-size: 12px; letter-spacing: 0.22em; text-decoration: none;
+      border: 1.5px solid rgba(168,197,181,0.5);
+      transition: all 0.35s; cursor: pointer;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .btn-ghost-w:hover { border-color: var(--white); color: var(--white); }
+
+    .res-info-grid {
+      display: flex; justify-content: center; gap: 56px; flex-wrap: wrap;
+    }
+    .res-info-item { text-align: center; }
+    .res-info-label {
+      font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--green-soft); margin-bottom: 8px; display: block;
+    }
+    .res-info-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 17px; color: var(--white); letter-spacing: 0.04em;
+    }
+    .res-info-divider {
+      width: 1px; background: rgba(168,197,181,0.3); self-align: stretch;
+      min-height: 40px;
+    }
+
+    @media (max-width: 680px) {
+      .reservation { padding: 80px 24px; }
+      .res-info-divider { display: none; }
+      .res-info-grid { gap: 32px; }
+    }
+
+    /* ══════════════════════════
+       FOOTER
+    ══════════════════════════ */
+    footer {
+      background: var(--text-dark);
+      padding: 56px 48px 36px;
+      display: flex; justify-content: space-between;
+      align-items: flex-start; flex-wrap: wrap; gap: 32px;
+    }
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px; color: var(--green-mist); letter-spacing: 0.06em;
+    }
+    .footer-logo em { font-style: italic; color: var(--green-pale); }
+    .footer-tagline {
+      font-size: 11px; color: var(--green-soft);
+      letter-spacing: 0.15em; margin-top: 8px;
+    }
+    .footer-meta {
+      font-size: 12px; color: rgba(168,197,181,0.6);
+      line-height: 2.2; letter-spacing: 0.08em; text-align: right;
+    }
+    .footer-copy {
+      width: 100%; text-align: center;
+      font-size: 10px; color: rgba(90,138,114,0.35);
+      letter-spacing: 0.2em; padding-top: 28px;
+      border-top: 1px solid rgba(90,138,114,0.12);
+      margin-top: 16px;
+    }
+
+    @media (max-width: 680px) {
+      footer { padding: 44px 24px 28px; flex-direction: column; }
+      .footer-meta { text-align: left; }
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Cafe <em>Lira</em></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Menu</a></li>
+    <li><a href="#reservation">Reserve</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-circle">
+    <div class="hero-circle-inner">🌿</div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Café in Tokyo, est. 2020</span>
+    <h1 class="hero-title">
+      緑に囲まれた<br>
+      <em>やすらぎの時間</em>
+    </h1>
+    <p class="hero-desc">
+      Cafe Lira は、日常の喧騒を離れ<br>
+      自分だけの静かなひとときを過ごすための<br>
+      特別な場所です。
+    </p>
+    <div class="hero-actions">
+      <a href="#reservation" class="btn-green"><span>ご予約はこちら</span></a>
+      <a href="#services" class="btn-ghost">メニューを見る</a>
+    </div>
+  </div>
+
+  <!-- spinning badge -->
+  <div class="hero-badge" style="right:60px;bottom:60px;position:absolute;">
+    <svg viewBox="0 0 100 100" width="100" height="100">
+      <defs>
+        <path id="circle" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0"/>
+      </defs>
+      <text font-size="9.5" letter-spacing="3.8" fill="rgba(168,197,181,0.8)" font-family="Noto Serif JP">
+        <textPath href="#circle">Cafe Lira · Tokyo · 2020 · </textPath>
+      </text>
+    </svg>
+    <span class="hero-badge-center">☘</span>
+  </div>
+</section>
+
+<!-- STORY -->
+<section style="overflow:hidden;">
+  <div class="story-band">
+    <div class="story-visual reveal">
+      <div class="story-box">
+        🫖
+        <div class="story-box-offset">🌱</div>
+      </div>
+    </div>
+    <div class="story-text reveal">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">植物と共に、<br><em>丁寧な一杯を。</em></h2>
+      <div class="leaf-divider"><span>✦</span></div>
+      <p class="story-body">
+        Cafe Lira は、緑豊かなナチュラルな空間の中で<br>
+        こだわりの豆を使ったコーヒーと、<br>
+        季節の食材を活かしたフードをお届けします。<br><br>
+        30代女性に愛される、上質でゆったりとした<br>
+        カフェ時間を演出します。
+      </p>
+      <div class="story-tags">
+        <span class="tag">自家焙煎コーヒー</span>
+        <span class="tag">オーガニック食材</span>
+        <span class="tag">ヴィーガン対応</span>
+        <span class="tag">Wi-Fi完備</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Specialty Coffee <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Seasonal Menu <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Organic Ingredients <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Quiet Space <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Plant-Based Options <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Handcrafted Drinks <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Specialty Coffee <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Seasonal Menu <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Organic Ingredients <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Quiet Space <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Plant-Based Options <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">Handcrafted Drinks <span class="marquee-dot">●</span></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title">私たちの<em>サービス</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="sc-num">01</span>
+      <span class="sc-icon">☕</span>
+      <p class="sc-name">Specialty Coffee</p>
+      <p class="sc-desc">
+        世界各地から厳選した豆を自家焙煎。
+        エスプレッソ・ドリップ・ラテアートまで、
+        バリスタが丁寧に一杯ずつお仕立てします。
+      </p>
+    </div>
+    <div class="service-card reveal">
+      <span class="sc-num">02</span>
+      <span class="sc-icon">🍽</span>
+      <p class="sc-name">Seasonal Food</p>
+      <p class="sc-desc">
+        旬の野菜・果物を使ったプレートやスイーツ。
+        グルテンフリー・ヴィーガン対応メニューも充実。
+        毎月変わるシーズナルメニューをお楽しみください。
+      </p>
+    </div>
+    <div class="service-card reveal">
+      <span class="sc-num">03</span>
+      <span class="sc-icon">🫧</span>
+      <p class="sc-name">Botanical Drinks</p>
+      <p class="sc-desc">
+        ハーブティー・自家製シロップのソーダ・
+        抹茶ラテなど、植物由来のこだわりドリンクを
+        ラインナップ。ノンカフェインも選べます。
+      </p>
+    </div>
+    <div class="service-card reveal">
+      <span class="sc-num">04</span>
+      <span class="sc-icon">📖</span>
+      <p class="sc-name">Private Space</p>
+      <p class="sc-desc">
+        ソロワーク・読書・少人数のお打ち合わせに
+        最適な半個室席をご用意。
+        Wi-Fi・電源完備で快適にお過ごしいただけます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-header reveal">
+    <div>
+      <span class="section-label">Price Menu</span>
+      <h2 class="section-title">料金<em>表</em></h2>
+    </div>
+    <p class="pricing-note">表示価格はすべて税込です。<br>メニューは仕入れにより変わる場合があります。</p>
+  </div>
+
+  <div class="pricing-tabs">
+    <button class="ptab active" onclick="switchTab(this,'drinks')">Drinks</button>
+    <button class="ptab" onclick="switchTab(this,'food')">Food</button>
+    <button class="ptab" onclick="switchTab(this,'plan')">Seat Plan</button>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="ptab-panel active" id="tab-drinks">
+    <div class="price-list">
+      <div class="price-row header">
+        <span>メニュー</span>
+        <span>サイズ</span>
+        <span>価格</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">ドリップコーヒー</p><p class="pr-desc">本日の自家焙煎豆</p></div>
+        <span class="pr-time">S / M</span>
+        <span class="pr-price">¥660 / ¥770</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">カフェラテ</p><p class="pr-desc">自家製オーツミルク変更可</p></div>
+        <span class="pr-time">M / L</span>
+        <span class="pr-price">¥770 / ¥880</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">抹茶ラテ</p><p class="pr-desc">京都産宇治抹茶使用</p></div>
+        <span class="pr-time">M</span>
+        <span class="pr-price">¥880</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">ボタニカルソーダ</p><p class="pr-desc">季節のハーブシロップ</p></div>
+        <span class="pr-time">M</span>
+        <span class="pr-price">¥770</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">ハーブティー</p><p class="pr-desc">5種類からお選びください</p></div>
+        <span class="pr-time">ポット</span>
+        <span class="pr-price">¥770</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOD -->
+  <div class="ptab-panel" id="tab-food">
+    <div class="price-list">
+      <div class="price-row header">
+        <span>メニュー</span>
+        <span>備考</span>
+        <span>価格</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">旬野菜のプレート</p><p class="pr-desc">スープ・ドリンク付き</p></div>
+        <span class="pr-time">ランチ</span>
+        <span class="pr-price">¥1,650</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">アボカドトースト</p><p class="pr-desc">グルテンフリーパン変更可</p></div>
+        <span class="pr-time">通年</span>
+        <span class="pr-price">¥1,100</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">季節のパンケーキ</p><p class="pr-desc">ヴィーガン対応あり</p></div>
+        <span class="pr-time">土日限定</span>
+        <span class="pr-price">¥1,320</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">自家製ケーキ</p><p class="pr-desc">日替わり2〜3種</p></div>
+        <span class="pr-time">通年</span>
+        <span class="pr-price">¥660〜</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEAT PLAN -->
+  <div class="ptab-panel" id="tab-plan">
+    <div class="price-list">
+      <div class="price-row header">
+        <span>プラン</span>
+        <span>時間</span>
+        <span>価格</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">ドロップイン（1名）</p><p class="pr-desc">カウンター or テーブル席</p></div>
+        <span class="pr-time">〜2時間</span>
+        <span class="pr-price">¥1,100</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">半個室プラン</p><p class="pr-desc">1〜3名、電源Wi-Fi付き</p></div>
+        <span class="pr-time">2時間</span>
+        <span class="pr-price">¥2,200</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">午後ゆっくりプラン</p><p class="pr-desc">ドリンク1杯付き</p></div>
+        <span class="pr-time">3時間</span>
+        <span class="pr-price">¥2,750</span>
+      </div>
+      <div class="price-row">
+        <div><p class="pr-name">貸し切りプラン</p><p class="pr-desc">最大15名、要予約</p></div>
+        <span class="pr-time">3時間〜</span>
+        <span class="pr-price">¥22,000〜</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reservation" id="reservation">
+  <div class="res-blob a"></div>
+  <div class="res-blob b"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="res-tag reveal">Reservation</div>
+    <h2 class="res-title reveal">ご<em>予約</em></h2>
+    <p class="res-sub reveal">
+      お席のご予約はお電話・公式LINEにて承っております。<br>
+      当日ご来店も歓迎ですが、週末は混雑する場合がございます。
+    </p>
+    <div class="res-btns reveal">
+      <a href="tel:03-0000-0000" class="btn-white">今すぐ予約する</a>
+      <a href="#" class="btn-ghost-w">LINE で予約</a>
+    </div>
+    <div class="res-info-grid reveal">
+      <div class="res-info-item">
+        <span class="res-info-label">Phone</span>
+        <span class="res-info-val">03-0000-0000</span>
+      </div>
+      <div class="res-info-divider"></div>
+      <div class="res-info-item">
+        <span class="res-info-label">Open</span>
+        <span class="res-info-val">09:00 — 20:00</span>
+      </div>
+      <div class="res-info-divider"></div>
+      <div class="res-info-item">
+        <span class="res-info-label">Closed</span>
+        <span class="res-info-val">毎週月曜日</span>
+      </div>
+      <div class="res-info-divider"></div>
+      <div class="res-info-item">
+        <span class="res-info-label">Access</span>
+        <span class="res-info-val">青山一丁目 徒歩5分</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Cafe <em>Lira</em></div>
+    <p class="footer-tagline">— a moment of calm in the city —</p>
+  </div>
+  <div class="footer-meta">
+    東京都港区青山 X-XX-XX<br>
+    TEL: 03-0000-0000<br>
+    Open: 09:00 – 20:00 ／ Closed: 月曜日
+  </div>
+  <p class="footer-copy">© 2026 Cafe Lira. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        const siblings = [...e.target.parentElement.children].filter(el => el.classList.contains('reveal'));
+        const idx = siblings.indexOf(e.target);
+        e.target.style.transitionDelay = (idx * 0.08) + 's';
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Pricing tabs
+  function switchTab(btn, id) {
+    document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.ptab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + id).classList.add('active');
+  }
+</script>
+</body>
+</html>
