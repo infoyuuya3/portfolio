@@ -1,0 +1,19 @@
+# Robots.txt for 家電の部屋
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /__manus__/
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://rakuten-appliances.manus.space/sitemap.xml
