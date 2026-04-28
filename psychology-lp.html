@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自己肯定感の正体 ― 前編 ― | 心理カウンセラー Mei</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  .psy-wrap {
+    background: radial-gradient(ellipse at 50% 30%, #1a2a4a 0%, #0a1020 65%);
+    min-height: 100vh;
+    padding: 50px 20px 80px;
+    font-family: 'Noto Serif JP', '游明朝', serif;
+    color: #dde4f5;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #psy-starfield {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #psy-starfield::before,
+  #psy-starfield::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  #psy-starfield::before {
+    animation: twinkleA 5s ease-in-out infinite alternate;
+    background-image:
+      radial-gradient(circle at 5% 8%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 15% 22%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 28% 7%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 42% 15%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 55% 4%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 68% 18%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 80% 8%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 92% 14%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 10% 19%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 35% 3%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 8% 28%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 22% 35%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 38% 24%, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.4) 1px, transparent 2px),
+      radial-gradient(circle at 52% 32%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 65% 27%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 78% 38%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 90% 22%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 3% 38%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 47% 21%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 72% 33%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 12% 48%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 25% 55%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 40% 43%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 58% 52%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 70% 47%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 85% 58%, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.4) 1px, transparent 2px),
+      radial-gradient(circle at 7% 53%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 33% 17%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+      radial-gradient(circle at 67% 43%, rgba(180,210,255,0.9) 0, rgba(180,210,255,0.9) 2px, transparent 3px),
+      radial-gradient(circle at 50% 75%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px);
+  }
+
+  #psy-starfield::after {
+    animation: twinkleB 7s ease-in-out infinite alternate;
+    background-image:
+      radial-gradient(circle at 18% 67%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 30% 73%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 45% 62%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 60% 78%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 75% 65%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 88% 71%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 5% 68%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 82% 62%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 95% 75%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 10% 85%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 28% 92%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 42% 82%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 58% 88%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 72% 95%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 85% 83%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 20% 78%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 65% 91%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 90% 87%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 48% 96%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 97% 45%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 2% 62%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 13% 72%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 37% 58%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 55% 68%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.7) 1px, transparent 2px),
+      radial-gradient(circle at 77% 82%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 2px),
+      radial-gradient(circle at 93% 55%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 32% 88%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 1px, transparent 2px),
+      radial-gradient(circle at 20% 28%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0.9) 2px, transparent 3px),
+      radial-gradient(circle at 80% 72%, rgba(180,210,255,0.85) 0, rgba(180,210,255,0.85) 2px, transparent 3px),
+      radial-gradient(circle at 75% 15%, rgba(255,255,255,0.95) 0, rgba(255,255,255,0.95) 3px, transparent 4px);
+  }
+
+  .psy-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .psy-brand {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #b8d8f5;
+    margin-bottom: 20px;
+  }
+
+  .psy-title {
+    text-align: center;
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 300;
+    letter-spacing: 4px;
+    line-height: 1.7;
+    color: #f0f4ff;
+    margin: 0 0 8px;
+  }
+
+  .psy-part {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 8px;
+    color: #b8d8f5;
+    margin-bottom: 40px;
+  }
+
+  .psy-video-wrap {
+    background: rgba(10, 20, 70, 0.7);
+    border: 1px solid rgba(140, 200, 240, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    box-shadow: 0 0 50px rgba(80, 140, 255, 0.18);
+    position: relative;
+    padding-top: 56.25%;
+  }
+
+  .psy-video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  .psy-cta-box {
+    text-align: center;
+    padding: 48px 24px;
+    background: rgba(10, 18, 60, 0.75);
+    border: 1px solid rgba(140, 200, 240, 0.18);
+    border-radius: 16px;
+  }
+
+  .psy-cta-eyebrow {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #b8d8f5;
+    margin-bottom: 20px;
+  }
+
+  .psy-cta-text {
+    font-size: clamp(16px, 2.5vw, 19px);
+    font-weight: 300;
+    line-height: 2;
+    margin-bottom: 24px;
+    color: #eef2ff;
+  }
+
+  .psy-cta-list {
+    list-style: none;
+    margin: 0 auto 36px;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .psy-cta-list li {
+    font-size: clamp(15px, 2.5vw, 17px);
+    color: #e8f4ff;
+    line-height: 1.8;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .psy-cta-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    font-size: 10px;
+    top: 6px;
+    color: #8cc8f0;
+  }
+
+  .psy-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #2864d0, #5ab4ff);
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 52px;
+    border-radius: 50px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    font-family: inherit;
+    box-shadow: 0 4px 30px rgba(90, 180, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .psy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 45px rgba(90, 180, 255, 0.7);
+  }
+
+  .psy-footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 12px;
+    color: #2a3a6a;
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 480px) {
+    .psy-wrap { padding: 40px 16px 60px; }
+    .psy-title { font-size: 26px; letter-spacing: 2px; }
+    .psy-part { font-size: 13px; letter-spacing: 5px; }
+    .psy-brand { font-size: 12px; }
+    .psy-cta-box { padding: 36px 16px; }
+    .psy-cta-text { font-size: 17px; line-height: 1.8; }
+    .psy-btn { font-size: 16px; padding: 18px 36px; width: 100%; }
+  }
+
+  @keyframes twinkleA {
+    0%   { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+  @keyframes twinkleB {
+    0%   { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+</style>
+</head>
+<body>
+
+<div class="psy-wrap">
+  <div id="psy-starfield"></div>
+
+  <div class="psy-content">
+
+    <p class="psy-brand">心理カウンセラー Mei</p>
+    <h1 class="psy-title">自己肯定感の正体</h1>
+    <p class="psy-part">― 前 編 ―</p>
+
+    <div class="psy-video-wrap">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="psy-cta-box">
+      <p class="psy-cta-eyebrow">✦ &nbsp; Next Step &nbsp; ✦</p>
+      <p class="psy-cta-text">
+        正体がわかっても、<br>
+        自己肯定感はすぐには上がりません。<br>
+        <br>
+        それは当然のこと。<br>
+        <br>
+        自己肯定感は"高めるもの"ではなく、<br>
+        "育てるもの"です。
+      </p>
+      <p class="psy-cta-text">
+        後編では心理学に基づいた<br>
+        <strong>自分を満たす3つの習慣</strong>をお伝えします。
+      </p>
+      <ul class="psy-cta-list">
+        <li>自分を「評価」ではなく「観察」する練習法</li>
+        <li>過去の失敗を学びに変えるリフレーミング</li>
+        <li>小さな成功体験から自己効力感を育てる方法</li>
+      </ul>
+      <a href="#" class="psy-btn">後編を見る &nbsp;→</a>
+    </div>
+
+    <p class="psy-footer">© 心理カウンセラー Mei</p>
+
+  </div>
+</div>
+
+</body>
+</html>
