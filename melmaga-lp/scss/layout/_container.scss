@@ -1,0 +1,31 @@
+.l-container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  &--narrow {
+    max-width: 56rem;
+  }
+}
+
+.l-section {
+  padding: var(--space-section) 0;
+  background-color: var(--color-bg);
+
+  &--cream {
+    background-color: var(--color-bg-cream);
+  }
+
+  &--dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+    background-image:
+      radial-gradient(circle at 18% 22%, rgba(184, 137, 59, 0.18) 0%, transparent 38%),
+      radial-gradient(circle at 82% 78%, rgba(31, 58, 95, 0.6) 0%, transparent 50%);
+  }
+
+  @media (max-width: 48rem) {
+    padding: 4rem 0;
+  }
+}

@@ -1,0 +1,97 @@
+.p-roadmap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  position: relative;
+
+  @media (max-width: 56rem) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    position: relative;
+    padding: 2rem 1.75rem;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-l);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform var(--duration-base) var(--ease-out),
+                background-color var(--duration-base) var(--ease-out);
+
+    &:hover {
+      transform: translateY(-4px);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:not(:last-child)::after {
+      content: "›";
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.75rem;
+      color: rgba(216, 176, 106, 0.5);
+      font-family: var(--font-sans);
+
+      @media (max-width: 56rem) {
+        right: 50%;
+        top: auto;
+        bottom: -1.25rem;
+        transform: translateX(50%) rotate(90deg);
+      }
+    }
+  }
+
+  &__phase {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background-color: rgba(216, 176, 106, 0.18);
+    color: var(--color-accent-soft);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.625rem;
+  }
+
+  &__period {
+    font-size: 0.75rem;
+    color: rgba(245, 239, 225, 0.6);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-size: 1.375rem;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.875rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+
+    li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.875rem;
+      color: rgba(245, 239, 225, 0.85);
+      line-height: 1.7;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.625rem;
+        width: 0.4375rem;
+        height: 0.4375rem;
+        border-radius: 50%;
+        background-color: var(--color-accent-soft);
+      }
+    }
+  }
+}

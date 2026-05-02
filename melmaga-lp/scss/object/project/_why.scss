@@ -1,0 +1,52 @@
+.p-why {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 56rem) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  &__card {
+    position: relative;
+    padding: 2.5rem 1.75rem 2rem;
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-l);
+    transition: transform var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-2);
+      border-color: rgba(184, 137, 59, 0.4);
+    }
+  }
+
+  &__num {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    font-size: 2.75rem;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--color-bg-soft);
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.875rem;
+    color: var(--color-primary);
+    position: relative;
+  }
+
+  &__desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    line-height: 1.85;
+  }
+}
