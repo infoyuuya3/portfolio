@@ -1,0 +1,96 @@
+.l-footer {
+  background-color: #0d1c33;
+  color: rgba(245, 239, 225, 0.7);
+  padding: 4rem 0 2rem;
+  font-size: 0.875rem;
+
+  .l-header__logo-text {
+    color: #fff;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    @media (max-width: 48rem) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &__brand {
+    max-width: 24rem;
+
+    .l-header__logo {
+      color: #fff;
+    }
+
+    &-text {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: rgba(245, 239, 225, 0.6);
+    }
+  }
+
+  &__nav-group {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  &__nav {
+    min-width: 8rem;
+
+    &-title {
+      color: #fff;
+      font-size: 0.875rem;
+      font-family: var(--font-sans);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.875rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    a {
+      color: rgba(245, 239, 225, 0.65);
+      font-size: 0.8125rem;
+      transition: color var(--duration-fast) var(--ease-out);
+
+      &:hover { color: var(--color-accent-soft); }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(245, 239, 225, 0.5);
+  }
+
+  &__copy {
+    letter-spacing: 0.04em;
+  }
+
+  &__legal {
+    display: flex;
+    gap: 1.25rem;
+
+    a {
+      color: rgba(245, 239, 225, 0.5);
+      transition: color var(--duration-fast) var(--ease-out);
+      &:hover { color: #fff; }
+    }
+  }
+}

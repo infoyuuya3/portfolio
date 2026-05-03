@@ -1,0 +1,87 @@
+:root {
+  --color-primary: #1f3a5f;
+  --color-primary-deep: #122644;
+  --color-accent: #b8893b;
+  --color-accent-soft: #d8b06a;
+
+  --color-text: #1f2630;
+  --color-text-secondary: rgba(31, 38, 48, 0.66);
+  --color-text-muted: rgba(31, 38, 48, 0.5);
+  --color-text-on-dark: #f5efe1;
+
+  --color-bg: #ffffff;
+  --color-bg-cream: #faf6ef;
+  --color-bg-soft: #f1ece1;
+  --color-bg-dark: #122644;
+
+  --color-border: rgba(31, 38, 48, 0.12);
+  --color-border-strong: rgba(31, 38, 48, 0.22);
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-xxl: 4.5rem;
+  --space-section: 6rem;
+
+  --radius-s: 0.5rem;
+  --radius-m: 0.875rem;
+  --radius-l: 1.5rem;
+
+  --shadow-1: 0 1px 3px rgba(18, 38, 68, 0.06), 0 1px 2px rgba(18, 38, 68, 0.04);
+  --shadow-2: 0 8px 24px rgba(18, 38, 68, 0.08), 0 2px 6px rgba(18, 38, 68, 0.04);
+  --shadow-3: 0 18px 48px rgba(18, 38, 68, 0.14), 0 4px 12px rgba(18, 38, 68, 0.06);
+
+  --duration-fast: 0.18s;
+  --duration-base: 0.28s;
+  --duration-slow: 0.4s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-sans: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    Arial, "Yu Gothic", Meiryo, sans-serif;
+}
+
+html,
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-feature-settings: "palt";
+}
+
+body {
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+p {
+  line-height: 1.85;
+  letter-spacing: 0;
+  font-feature-settings: normal;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+::selection {
+  background-color: var(--color-accent-soft);
+  color: var(--color-primary-deep);
+}
