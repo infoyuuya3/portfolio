@@ -1,0 +1,34 @@
+.l-section {
+  padding: var(--space-xxxl) 0;
+  background-color: var(--color-bg);
+  position: relative;
+
+  &--soft {
+    background-color: var(--color-bg-soft);
+  }
+
+  &--sky {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.55), transparent 36%),
+      radial-gradient(circle at 88% 82%, rgba(255, 255, 255, 0.4), transparent 40%),
+      linear-gradient(180deg, var(--color-bg-sky) 0%, var(--color-bg-sky-dark) 100%);
+    color: #fff;
+    overflow: hidden;
+  }
+
+  @media (max-width: 48rem) {
+    padding: var(--space-xxl) 0;
+  }
+}
+
+.l-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 var(--space-l);
+  position: relative;
+  z-index: 1;
+
+  &--narrow {
+    max-width: 56rem;
+  }
+}

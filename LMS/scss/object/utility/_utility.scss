@@ -1,0 +1,15 @@
+.u-text-center { text-align: center !important; }
+.u-mt-0 { margin-top: 0 !important; }
+.u-mt-l { margin-top: var(--space-l) !important; }
+.u-mt-xl { margin-top: var(--space-xl) !important; }
+
+.u-fade-in {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

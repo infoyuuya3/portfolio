@@ -1,0 +1,23 @@
+@use "foundation/reset";
+@use "foundation/base";
+
+@use "layout/container";
+@use "layout/header";
+@use "layout/footer";
+
+@use "object/component/button";
+@use "object/component/section-header";
+@use "object/component/feat-card";
+@use "object/component/plan";
+@use "object/component/steps";
+@use "object/component/teacher";
+@use "object/component/quote";
+@use "object/component/faq";
+
+@use "object/project/hero";
+@use "object/project/news";
+@use "object/project/courses";
+@use "object/project/cta";
+@use "object/project/contact";
+
+@use "object/utility/utility";

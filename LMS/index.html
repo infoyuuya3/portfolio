@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まなびLab — 楽しく学んで、ぐんぐん伸びる小中学生の学習塾</title>
+<meta name="description" content="小学1年生から中学3年生まで、5教科+プログラミングを"楽しく学ぶ"を軸に伸ばす学習塾。地域密着・少人数指導・無料体験実施中。">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="l-header" id="js-header">
+  <div class="l-header__inner">
+    <a class="l-header__logo" href="#">
+      <span class="l-header__logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <circle cx="20" cy="20" r="18" fill="#3eb5f1"/>
+          <path d="M12 24 L20 12 L28 24 Z" fill="#fff"/>
+          <circle cx="20" cy="22" r="2.4" fill="#fbc83d"/>
+        </svg>
+      </span>
+      <span class="l-header__logo-text">
+        <strong>まなびLab</strong>
+        <small>MANABI LAB</small>
+      </span>
+    </a>
+    <nav class="l-header__nav">
+      <a class="l-header__nav-item" href="#about">教室について</a>
+      <a class="l-header__nav-item" href="#features">3大特長</a>
+      <a class="l-header__nav-item" href="#courses">コース紹介</a>
+      <a class="l-header__nav-item" href="#voice">先輩の声</a>
+      <a class="l-header__nav-item" href="#faq">よくある質問</a>
+    </nav>
+    <div class="l-header__actions">
+      <a class="c-button c-button--ghost" href="#contact">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>お問い合わせ
+      </a>
+      <a class="c-button c-button--primary" href="#trial">無料体験へ</a>
+    </div>
+    <button class="l-header__hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="l-header__mobile-menu" aria-hidden="true">
+  <div class="l-header__mobile-top">
+    <a class="l-header__logo" href="#">
+      <span class="l-header__logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <circle cx="20" cy="20" r="18" fill="#3eb5f1"/>
+          <path d="M12 24 L20 12 L28 24 Z" fill="#fff"/>
+          <circle cx="20" cy="22" r="2.4" fill="#fbc83d"/>
+        </svg>
+      </span>
+      <span class="l-header__logo-text"><strong>まなびLab</strong></span>
+    </a>
+    <button class="l-header__mobile-close" aria-label="メニューを閉じる">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="l-header__mobile-nav">
+    <a class="l-header__mobile-nav-item" href="#about">教室について</a>
+    <a class="l-header__mobile-nav-item" href="#features">3大特長</a>
+    <a class="l-header__mobile-nav-item" href="#courses">コース紹介</a>
+    <a class="l-header__mobile-nav-item" href="#voice">先輩の声</a>
+    <a class="l-header__mobile-nav-item" href="#faq">よくある質問</a>
+  </nav>
+  <div class="l-header__mobile-actions">
+    <a class="c-button c-button--ghost" href="#contact">お問い合わせ</a>
+    <a class="c-button c-button--primary" href="#trial">無料体験へ</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="p-hero">
+    <div class="p-hero__shapes" aria-hidden="true">
+      <span class="p-hero__shape p-hero__shape--1"></span>
+      <span class="p-hero__shape p-hero__shape--2"></span>
+      <span class="p-hero__shape p-hero__shape--3"></span>
+      <span class="p-hero__shape p-hero__shape--4"></span>
+      <span class="p-hero__shape p-hero__shape--5"></span>
+    </div>
+    <div class="p-hero__inner">
+      <div class="p-hero__visual">
+        <img src="img/hero-kid.jpg" alt="ノートパソコンに向かって笑顔で学ぶ子ども">
+        <span class="p-hero__visual-cloud p-hero__visual-cloud--1" aria-hidden="true">楽しい！</span>
+        <span class="p-hero__visual-cloud p-hero__visual-cloud--2" aria-hidden="true">できた！</span>
+      </div>
+      <div class="p-hero__body">
+        <span class="p-hero__eyebrow">小1〜中3 / 5教科 + プログラミング</span>
+        <h1 class="p-hero__title">
+          <span class="p-hero__title-sub">まなびLabで</span>
+          <span class="p-hero__title-main">"勉強って<em>楽しい</em>"を、<br>はじめのいっぽに。</span>
+        </h1>
+        <p class="p-hero__lead">
+          地域密着・少人数制の学習塾です。<br>
+          教科書の前に、まずは「分かった！」と笑顔になれる瞬間を一緒に。
+        </p>
+        <div class="p-hero__actions">
+          <a class="c-button c-button--primary c-button--large" href="#trial">
+            <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+            まずは無料体験へ
+          </a>
+          <a class="c-button c-button--secondary c-button--large" href="#courses">
+            コースを見てみる
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <ul class="p-hero__trust">
+          <li class="p-hero__trust-item"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>入塾金0円キャンペーン中</li>
+          <li class="p-hero__trust-item"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>兄弟姉妹割引あり</li>
+          <li class="p-hero__trust-item"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>振替授業 自由</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ヒーロー下のラップトップ画像ストリップ -->
+    <div class="p-hero-strip" aria-hidden="true">
+      <div class="p-hero-strip__track">
+        <figure class="p-hero-strip__item"><img src="img/strip-1.jpg" alt=""></figure>
+        <figure class="p-hero-strip__item"><img src="img/strip-2.jpg" alt=""></figure>
+        <figure class="p-hero-strip__item"><img src="img/strip-3.jpg" alt=""></figure>
+        <figure class="p-hero-strip__item"><img src="img/strip-4.jpg" alt=""></figure>
+        <!-- 無限スクロールのため複製 -->
+        <figure class="p-hero-strip__item"><img src="img/strip-1.jpg" alt=""></figure>
+        <figure class="p-hero-strip__item"><img src="img/strip-2.jpg" alt=""></figure>
+        <figure class="p-hero-strip__item"><img src="img/strip-3.jpg" alt=""></figure>
+        <figure class="p-hero-strip__item"><img src="img/strip-4.jpg" alt=""></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="l-section l-section--soft" id="about">
+    <div class="l-container">
+      <div class="p-news">
+        <span class="p-news__label">お知らせ</span>
+        <ul class="p-news__list">
+          <li><a href="#">2026年度 新規入塾生の募集を開始しました <small>（2026年5月1日更新）</small></a></li>
+          <li><a href="#">夏期講習の早期申込キャンペーンのご案内 <small>（2026年4月20日）</small></a></li>
+        </ul>
+      </div>
+
+      <div class="c-section-header">
+        <span class="c-section-header__bg-label" aria-hidden="true">ABOUT</span>
+        <h2 class="c-section-header__title">まなびLabって、どんな塾？</h2>
+        <p class="c-section-header__lead">
+          小学校でのプログラミング必修化や、変わり続ける入試制度。<br>
+          「いまの子どもに必要な学び」を、楽しさを軸に組み立て直した学習塾です。<br>
+          創立以来、地域のご家庭に支持され、累計4,800名の生徒さんをお迎えしてきました。
+        </p>
+        <a class="c-button c-button--primary c-button--rounded" href="#features">
+          さらに読む
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3大特長 -->
+  <section class="l-section l-section--sky" id="features">
+    <div class="l-container">
+      <div class="c-section-header c-section-header--light">
+        <span class="c-section-header__bg-label c-section-header__bg-label--light" aria-hidden="true">FEATURES</span>
+        <h2 class="c-section-header__title c-section-header__title--light">まなびLabならではの<br>3大特長</h2>
+      </div>
+
+      <div class="p-features">
+        <article class="c-feat-card">
+          <div class="c-feat-card__num">
+            <span class="c-feat-card__num-label">特長</span>
+            <span class="c-feat-card__num-value">01</span>
+          </div>
+          <h3 class="c-feat-card__title">25年の指導ノウハウを<br>活かして生まれました</h3>
+          <div class="c-feat-card__photo">
+            <img src="img/feat-card-1.jpg" alt="教室での個別指導の様子">
+          </div>
+          <p class="c-feat-card__text">
+            国語・算数を中心とした教育の歴史を始め、「ロボット教室」「サイエンスラボ」「英語スクール」等を通じて確立した、<strong>"お子さまが自分から通いたくなる"</strong>ノウハウを、まなびLabのすべての授業に活かしています。
+          </p>
+        </article>
+
+        <article class="c-feat-card">
+          <div class="c-feat-card__num">
+            <span class="c-feat-card__num-label">特長</span>
+            <span class="c-feat-card__num-value">02</span>
+          </div>
+          <h3 class="c-feat-card__title">「手を動かしながら考える」<br>を徹底したカリキュラム</h3>
+          <div class="c-feat-card__photo">
+            <img src="img/feat-card-2.jpg" alt="講師と生徒が一緒に問題を解く様子">
+          </div>
+          <p class="c-feat-card__text">
+            まなびLabの児童教育は、よくある「お子さまは先生の言うことを聞いてその通りにする」習いごととは一線を画しています。一人ひとりの習熟度や個性を見つめながら、<strong>「お子さまが自発的に考え、試行錯誤する」</strong>ことに重点を置いたカリキュラムを完成させています。
+          </p>
+        </article>
+
+        <article class="c-feat-card">
+          <div class="c-feat-card__num">
+            <span class="c-feat-card__num-label">特長</span>
+            <span class="c-feat-card__num-value">03</span>
+          </div>
+          <h3 class="c-feat-card__title">「楽しく学べる」を<br>追求したオリジナル教材</h3>
+          <div class="c-feat-card__photo">
+            <img src="img/feat-card-3.jpg" alt="カラフルなオリジナル教材">
+          </div>
+          <p class="c-feat-card__text">
+            まず、最初でつまずいたり、嫌になったりしないこと。達成感を得る喜びを連続させることを計算した教材を開発しています。<strong>パソコン初心者が、知らずのうちに操作を習得できるように</strong>、考える力をどんどん伸ばせるように、あらゆる仕掛けが施された教材になっています。
+          </p>
+        </article>
+      </div>
+
+      <div class="p-features__more">
+        <a class="c-button c-button--primary c-button--large c-button--rounded" href="#courses">
+          詳しくはこちら
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- コース -->
+  <section class="l-section" id="courses">
+    <div class="l-container">
+      <div class="c-section-header">
+        <span class="c-section-header__bg-label" aria-hidden="true">COURSES</span>
+        <h2 class="c-section-header__title">学年・目的別の<br>4つのコース</h2>
+        <p class="c-section-header__lead">「いま必要な学び」と「これから伸ばしたい力」、両方に応える設計です。</p>
+      </div>
+
+      <div class="p-courses">
+        <article class="c-plan">
+          <div class="c-plan__head">
+            <span class="c-plan__category c-plan__category--blue">小学生</span>
+            <h3 class="c-plan__name">基礎力育成コース</h3>
+            <p class="c-plan__catch">学ぶ楽しさを、まず見つける。</p>
+          </div>
+          <div class="c-plan__price">
+            <span class="c-plan__price-num">¥14,800</span>
+            <span class="c-plan__price-unit">/ 月（週1回・80分）</span>
+          </div>
+          <ul class="c-plan__list">
+            <li class="c-plan__item">国語・算数の土台を対話で固める</li>
+            <li class="c-plan__item">読書感想文・自由研究のサポート付き</li>
+            <li class="c-plan__item">中学受験対策にも切替可</li>
+          </ul>
+          <a class="c-button c-button--outline c-button--rounded c-plan__cta" href="#trial">体験を申込む</a>
+        </article>
+
+        <article class="c-plan c-plan--featured">
+          <span class="c-plan__badge">人気No.1</span>
+          <div class="c-plan__head">
+            <span class="c-plan__category c-plan__category--orange">中学生</span>
+            <h3 class="c-plan__name">公立高校合格コース</h3>
+            <p class="c-plan__catch">内申点と入試、両輪で勝つ。</p>
+          </div>
+          <div class="c-plan__price">
+            <span class="c-plan__price-num">¥24,800</span>
+            <span class="c-plan__price-unit">/ 月（週2回・90分）</span>
+          </div>
+          <ul class="c-plan__list">
+            <li class="c-plan__item">5教科対応 / 定期テスト2週間前から無料補講</li>
+            <li class="c-plan__item">中3生は10月から入試本番演習に切替</li>
+            <li class="c-plan__item">県内主要校の出題傾向を分析した教材</li>
+          </ul>
+          <a class="c-button c-button--primary c-button--rounded c-plan__cta" href="#trial">体験を申込む</a>
+        </article>
+
+        <article class="c-plan">
+          <div class="c-plan__head">
+            <span class="c-plan__category c-plan__category--green">小・中学生</span>
+            <h3 class="c-plan__name">プログラミング教室</h3>
+            <p class="c-plan__catch">自分でつくる楽しさを。</p>
+          </div>
+          <div class="c-plan__price">
+            <span class="c-plan__price-num">¥12,800</span>
+            <span class="c-plan__price-unit">/ 月（月2回・90分）</span>
+          </div>
+          <ul class="c-plan__list">
+            <li class="c-plan__item">Scratch → micro:bit → Python の3段階</li>
+            <li class="c-plan__item">完成作品は年2回の発表会で披露</li>
+            <li class="c-plan__item">ジュニアプログラミング検定にも対応</li>
+          </ul>
+          <a class="c-button c-button--outline c-button--rounded c-plan__cta" href="#trial">体験を申込む</a>
+        </article>
+
+        <article class="c-plan">
+          <div class="c-plan__head">
+            <span class="c-plan__category c-plan__category--pink">小・中学生</span>
+            <h3 class="c-plan__name">英検・数検対策</h3>
+            <p class="c-plan__catch">資格を、実力の証明に。</p>
+          </div>
+          <div class="c-plan__price">
+            <span class="c-plan__price-num">¥9,800</span>
+            <span class="c-plan__price-unit">/ 月（短期4回〜）</span>
+          </div>
+          <ul class="c-plan__list">
+            <li class="c-plan__item">英検3級〜準1級 / 数検5級〜2級まで対応</li>
+            <li class="c-plan__item">過去問演習 + 弱点単元の集中補強</li>
+            <li class="c-plan__item">面接対策（英検準2級以上）も含む</li>
+          </ul>
+          <a class="c-button c-button--outline c-button--rounded c-plan__cta" href="#trial">体験を申込む</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 入塾までの流れ -->
+  <section class="l-section l-section--soft" id="flow">
+    <div class="l-container">
+      <div class="c-section-header">
+        <span class="c-section-header__bg-label" aria-hidden="true">FLOW</span>
+        <h2 class="c-section-header__title">入塾までの流れ</h2>
+        <p class="c-section-header__lead">「合うかどうか」を見極めてから入塾を決めていただけます。</p>
+      </div>
+
+      <ol class="c-steps c-steps--vertical">
+        <li class="c-step">
+          <div class="c-step__circle" aria-hidden="true">01</div>
+          <div class="c-step__body">
+            <h3 class="c-step__title">お問い合わせ・面談予約</h3>
+            <p class="c-step__text">お電話またはWebフォームから、面談希望日をお知らせください。担当より24時間以内にご連絡します。</p>
+          </div>
+        </li>
+        <li class="c-step">
+          <div class="c-step__circle" aria-hidden="true">02</div>
+          <div class="c-step__body">
+            <h3 class="c-step__title">学習診断・面談（60分）</h3>
+            <p class="c-step__text">現在の学習状況・志望校・ご家庭での学習時間をヒアリング。簡易テストで現在地を把握します。費用は一切かかりません。</p>
+          </div>
+        </li>
+        <li class="c-step">
+          <div class="c-step__circle" aria-hidden="true">03</div>
+          <div class="c-step__body">
+            <h3 class="c-step__title">無料体験授業（80分 × 1回）</h3>
+            <p class="c-step__text">実際の授業をそのまま受講。「楽しく学べる授業」が合うかどうか、生徒さん自身で判断していただきます。</p>
+          </div>
+        </li>
+        <li class="c-step">
+          <div class="c-step__circle" aria-hidden="true">04</div>
+          <div class="c-step__body">
+            <h3 class="c-step__title">学習プラン提案 → ご入塾</h3>
+            <p class="c-step__text">体験を踏まえた個別カリキュラムをご提案。納得いただけてから手続きへ進みます。即日決定の必要はありません。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 講師紹介 -->
+  <section class="l-section" id="teachers">
+    <div class="l-container">
+      <div class="c-section-header">
+        <span class="c-section-header__bg-label" aria-hidden="true">TEACHERS</span>
+        <h2 class="c-section-header__title">まなびLabの講師</h2>
+        <p class="c-section-header__lead">教科の専門性と、子どもとの対話力。両方を備えた専任講師がお迎えします。</p>
+      </div>
+
+      <div class="p-teachers">
+        <article class="c-teacher">
+          <div class="c-teacher__photo">
+            <img src="img/teacher-1.jpg" alt="室長 / 国語・英語担当 高瀬 葉月">
+          </div>
+          <div class="c-teacher__body">
+            <span class="c-teacher__role">室長 / 国語・英語</span>
+            <h3 class="c-teacher__name">高瀬 葉月</h3>
+            <p class="c-teacher__profile">早稲田大学 文学部卒。出版社編集部を経て2008年に当塾へ。「読み解く力は全教科の土台」を信条に、指導歴17年。</p>
+            <ul class="c-teacher__tags">
+              <li class="c-teacher__tag">中学受験</li>
+              <li class="c-teacher__tag">高校受験</li>
+              <li class="c-teacher__tag">英検準1級指導</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="c-teacher">
+          <div class="c-teacher__photo">
+            <img src="img/teacher-2.jpg" alt="数学・プログラミング担当 木下 拓海">
+          </div>
+          <div class="c-teacher__body">
+            <span class="c-teacher__role">専任 / 数学・プログラミング</span>
+            <h3 class="c-teacher__name">木下 拓海</h3>
+            <p class="c-teacher__profile">東京工業大学 理学院卒。元エンジニア。「公式の暗記より、なぜそうなるかの設計図」を伝えることを大切にしています。</p>
+            <ul class="c-teacher__tags">
+              <li class="c-teacher__tag">高校数学</li>
+              <li class="c-teacher__tag">物理</li>
+              <li class="c-teacher__tag">Python指導</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="c-teacher">
+          <div class="c-teacher__photo">
+            <img src="img/teacher-3.jpg" alt="社会・面接指導担当 三浦 千夏">
+          </div>
+          <div class="c-teacher__body">
+            <span class="c-teacher__role">専任 / 社会・面接</span>
+            <h3 class="c-teacher__name">三浦 千夏</h3>
+            <p class="c-teacher__profile">一橋大学 社会学部卒。地方公務員を経て教育の道へ。社会科の単元を「ニュースに繋げて理解する」授業に定評あり。</p>
+            <ul class="c-teacher__tags">
+              <li class="c-teacher__tag">中学社会</li>
+              <li class="c-teacher__tag">小論文</li>
+              <li class="c-teacher__tag">推薦面接</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 先輩の声 -->
+  <section class="l-section l-section--soft" id="voice">
+    <div class="l-container">
+      <div class="c-section-header">
+        <span class="c-section-header__bg-label" aria-hidden="true">VOICE</span>
+        <h2 class="c-section-header__title">先輩・保護者の声</h2>
+        <p class="c-section-header__lead">数字の裏側にある、一人ひとりの "変化の物語" をお届けします。</p>
+      </div>
+
+      <div class="c-quote">
+        <i class="fa-solid fa-quote-left c-quote__mark" aria-hidden="true"></i>
+        <p class="c-quote__text">
+          「答え合わせ」じゃなくて「説明させてもらう」授業に最初は戸惑いました。でも半年経った頃、自分が何を分かっていて何を分かっていないのかが、初めて自分で見えるようになった。<br>
+          模試の偏差値より、その感覚を手に入れられたことが一番大きかったです。
+        </p>
+        <div class="c-quote__profile">
+          <div class="c-quote__avatar"><img src="img/voice-1.jpg" alt=""></div>
+          <div class="c-quote__info">
+            <p class="c-quote__name">M.S. さん</p>
+            <p class="c-quote__role">県立旭丘高校 合格 / 中3から在籍</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-voices">
+        <article class="c-testimonial-mini">
+          <div class="c-testimonial-mini__head">
+            <img class="c-testimonial-mini__avatar" src="img/voice-2.jpg" alt="">
+            <div>
+              <p class="c-testimonial-mini__name">K.T. さん（保護者）</p>
+              <p class="c-testimonial-mini__role">小5 / 基礎力育成コース</p>
+            </div>
+          </div>
+          <p class="c-testimonial-mini__text">「分からないことを聞ける場所がある」という安心感だけでも、家での宿題への向き合い方が変わりました。先生が宿題の量より"質"にこだわってくれるのが信頼できます。</p>
+        </article>
+
+        <article class="c-testimonial-mini">
+          <div class="c-testimonial-mini__head">
+            <img class="c-testimonial-mini__avatar" src="img/voice-3.jpg" alt="">
+            <div>
+              <p class="c-testimonial-mini__name">R.A. さん</p>
+              <p class="c-testimonial-mini__role">プログラミングコース / 小6</p>
+            </div>
+          </div>
+          <p class="c-testimonial-mini__text">最初はゲームで遊ぶつもりで始めましたが、自分でゲームを作る側になれることに気づいて夢中に。発表会で家族に見せるのが今の目標です。</p>
+        </article>
+
+        <article class="c-testimonial-mini">
+          <div class="c-testimonial-mini__head">
+            <img class="c-testimonial-mini__avatar" src="img/voice-4.jpg" alt="">
+            <div>
+              <p class="c-testimonial-mini__name">Y.O. さん（保護者）</p>
+              <p class="c-testimonial-mini__role">中2 / 公立高校合格コース</p>
+            </div>
+          </div>
+          <p class="c-testimonial-mini__text">他塾で集団授業についていけず転塾しました。最初の面談で2学年前の単元まで戻る提案をしてくれて、遠回りに見えて結果的に最短でした。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="l-section" id="faq">
+    <div class="l-container l-container--narrow">
+      <div class="c-section-header">
+        <span class="c-section-header__bg-label" aria-hidden="true">FAQ</span>
+        <h2 class="c-section-header__title">よくあるご質問</h2>
+        <p class="c-section-header__lead">入塾前に多くいただくご質問をまとめました。記載のない質問はお気軽にお問い合わせください。</p>
+      </div>
+
+      <div class="p-faq">
+        <div class="c-faq-item">
+          <button class="c-faq-item__question" aria-expanded="false">
+            <span><em>Q.</em>体験授業を受けたら、入塾しなければいけませんか？</span>
+            <i class="fa-solid fa-plus c-faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="c-faq-item__answer">
+            <p>いいえ、体験のみで終了して全く問題ありません。当日や翌日の即決をお願いすることはなく、ご家庭でゆっくり検討いただけます。実際、体験後1ヶ月以上経ってから入塾を決められる方も多くいらっしゃいます。</p>
+          </div>
+        </div>
+
+        <div class="c-faq-item">
+          <button class="c-faq-item__question" aria-expanded="false">
+            <span><em>Q.</em>講師の指名や変更はできますか？</span>
+            <i class="fa-solid fa-plus c-faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="c-faq-item__answer">
+            <p>初回は学習診断の結果から最適な講師を担当としてご提案します。授業を数回受けた後、相性が合わないと感じられた場合は、いつでも講師変更をご相談ください。3ヶ月目に必ず保護者面談で確認しています。</p>
+          </div>
+        </div>
+
+        <div class="c-faq-item">
+          <button class="c-faq-item__question" aria-expanded="false">
+            <span><em>Q.</em>授業を欠席した場合、振替はできますか？</span>
+            <i class="fa-solid fa-plus c-faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="c-faq-item__answer">
+            <p>前日18時までのご連絡で、同月内の振替を無料で承ります。学校行事や部活、体調不良など理由は問いません。定期テスト期間中は、テスト範囲に合わせた振替授業の組み直しも可能です。</p>
+          </div>
+        </div>
+
+        <div class="c-faq-item">
+          <button class="c-faq-item__question" aria-expanded="false">
+            <span><em>Q.</em>パソコンは持っていなくても大丈夫ですか？</span>
+            <i class="fa-solid fa-plus c-faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="c-faq-item__answer">
+            <p>プログラミングコースでは、教室に1人1台のノートパソコンをご用意しています。ご家庭での復習用にお手持ちのPCで動作する設定方法もお伝えしますが、お持ちでなくても授業はそのまま受けていただけます。</p>
+          </div>
+        </div>
+
+        <div class="c-faq-item">
+          <button class="c-faq-item__question" aria-expanded="false">
+            <span><em>Q.</em>不登校・別室登校でも通えますか？</span>
+            <i class="fa-solid fa-plus c-faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="c-faq-item__answer">
+            <p>はい、これまで多くの生徒さんを受け入れてきました。学習面だけでなく「外との接点を保つ場」としての役割も意識しています。お子さまのペースに合わせて、まずは週1回30分の対話からスタートする例もあります。</p>
+          </div>
+        </div>
+
+        <div class="c-faq-item">
+          <button class="c-faq-item__question" aria-expanded="false">
+            <span><em>Q.</em>送迎時の駐車場はありますか？</span>
+            <i class="fa-solid fa-plus c-faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="c-faq-item__answer">
+            <p>校舎前に送迎用の停車スペースを2台分確保しています。長時間駐車は近隣のコインパーキング（徒歩2分・提携あり）をご利用ください。月8回以上の送迎で利用される方には、提携駐車場の割引券をお渡ししています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="p-cta" id="trial">
+    <div class="p-cta__shapes" aria-hidden="true">
+      <span class="p-cta__shape p-cta__shape--1"></span>
+      <span class="p-cta__shape p-cta__shape--2"></span>
+      <span class="p-cta__shape p-cta__shape--3"></span>
+    </div>
+    <div class="p-cta__inner">
+      <span class="p-cta__eyebrow">FIRST STEP</span>
+      <h2 class="p-cta__title">まずは80分、<br>"楽しく学べる授業"を体験してください。</h2>
+      <p class="p-cta__lead">無料体験は学年・教科を問わず、お一人さま1回まで。<br>面談のみのご相談も歓迎しています。</p>
+      <div class="p-cta__actions">
+        <a class="c-button c-button--white c-button--large c-button--rounded" href="#contact">
+          <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+          無料体験を申込む
+        </a>
+        <a class="c-button c-button--ghost-light c-button--large c-button--rounded" href="tel:0120-000-000">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          0120-000-000<small>（平日14-21時 / 土10-18時）</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="l-section l-section--soft" id="contact">
+    <div class="l-container l-container--narrow">
+      <div class="c-section-header">
+        <span class="c-section-header__bg-label" aria-hidden="true">CONTACT</span>
+        <h2 class="c-section-header__title">お問い合わせフォーム</h2>
+        <p class="c-section-header__lead">担当より24時間以内（土日祝除く）にご連絡いたします。</p>
+      </div>
+
+      <form class="p-contact" onsubmit="event.preventDefault(); alert('体験フォームのデモです。');">
+        <div class="p-contact__row">
+          <label class="p-contact__field">
+            <span class="p-contact__label">保護者氏名 <em>必須</em></span>
+            <input type="text" name="parent" required placeholder="例：山田 太郎">
+          </label>
+          <label class="p-contact__field">
+            <span class="p-contact__label">生徒氏名 <em>必須</em></span>
+            <input type="text" name="child" required placeholder="例：山田 花子">
+          </label>
+        </div>
+        <div class="p-contact__row">
+          <label class="p-contact__field">
+            <span class="p-contact__label">学年 <em>必須</em></span>
+            <select name="grade" required>
+              <option value="">選択してください</option>
+              <option>小学1年</option><option>小学2年</option><option>小学3年</option>
+              <option>小学4年</option><option>小学5年</option><option>小学6年</option>
+              <option>中学1年</option><option>中学2年</option><option>中学3年</option>
+            </select>
+          </label>
+          <label class="p-contact__field">
+            <span class="p-contact__label">ご希望コース</span>
+            <select name="course">
+              <option value="">未定 / 相談したい</option>
+              <option>基礎力育成コース</option>
+              <option>公立高校合格コース</option>
+              <option>プログラミング教室</option>
+              <option>英検・数検対策</option>
+            </select>
+          </label>
+        </div>
+        <div class="p-contact__row">
+          <label class="p-contact__field">
+            <span class="p-contact__label">メールアドレス <em>必須</em></span>
+            <input type="email" name="email" required placeholder="example@mail.com">
+          </label>
+          <label class="p-contact__field">
+            <span class="p-contact__label">電話番号</span>
+            <input type="tel" name="tel" placeholder="000-0000-0000">
+          </label>
+        </div>
+        <label class="p-contact__field">
+          <span class="p-contact__label">ご相談内容</span>
+          <textarea name="message" rows="5" placeholder="現在の学習状況や、ご希望の体験日時などをご記入ください。"></textarea>
+        </label>
+        <label class="p-contact__check">
+          <input type="checkbox" required>
+          <span><a href="#">プライバシーポリシー</a>に同意する</span>
+        </label>
+        <button type="submit" class="c-button c-button--primary c-button--large c-button--block c-button--rounded">
+          無料体験を申込む
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="l-footer">
+  <div class="l-footer__inner">
+    <div class="l-footer__top">
+      <div class="l-footer__brand">
+        <a class="l-header__logo" href="#">
+          <span class="l-header__logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+              <circle cx="20" cy="20" r="18" fill="#3eb5f1"/>
+              <path d="M12 24 L20 12 L28 24 Z" fill="#fff"/>
+              <circle cx="20" cy="22" r="2.4" fill="#fbc83d"/>
+            </svg>
+          </span>
+          <span class="l-header__logo-text"><strong>まなびLab</strong><small>MANABI LAB</small></span>
+        </a>
+        <p class="l-footer__about">小1〜中3 / 5教科 + プログラミング<br>地域密着・少人数制の学習塾</p>
+        <ul class="l-footer__contact">
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>愛知県名古屋市千種区今池1-2-3 ヨシダビル 2F</li>
+          <li><i class="fa-solid fa-phone" aria-hidden="true"></i>0120-000-000（平日14-21時 / 土10-18時）</li>
+          <li><i class="fa-solid fa-envelope" aria-hidden="true"></i>info@manabi-lab.example</li>
+        </ul>
+      </div>
+      <div class="l-footer__nav-group">
+        <div class="l-footer__nav">
+          <h3 class="l-footer__nav-title">教室について</h3>
+          <a class="l-footer__nav-item" href="#about">まなびLabとは</a>
+          <a class="l-footer__nav-item" href="#features">3大特長</a>
+          <a class="l-footer__nav-item" href="#teachers">講師紹介</a>
+        </div>
+        <div class="l-footer__nav">
+          <h3 class="l-footer__nav-title">コース</h3>
+          <a class="l-footer__nav-item" href="#courses">基礎力育成</a>
+          <a class="l-footer__nav-item" href="#courses">公立高校合格</a>
+          <a class="l-footer__nav-item" href="#courses">プログラミング</a>
+          <a class="l-footer__nav-item" href="#courses">英検・数検</a>
+        </div>
+        <div class="l-footer__nav">
+          <h3 class="l-footer__nav-title">サポート</h3>
+          <a class="l-footer__nav-item" href="#flow">入塾までの流れ</a>
+          <a class="l-footer__nav-item" href="#voice">先輩の声</a>
+          <a class="l-footer__nav-item" href="#faq">よくある質問</a>
+          <a class="l-footer__nav-item" href="#contact">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="l-footer__bottom">
+      <small class="l-footer__copy">&copy; 2026 MANABI LAB. All rights reserved.</small>
+      <ul class="l-footer__legal">
+        <li><a href="#">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
