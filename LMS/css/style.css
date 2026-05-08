@@ -669,7 +669,7 @@ p {
 .p-hero__title {
   font-size: clamp(2rem, 5.4vw, 3.5rem);
   font-weight: 900;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   margin-bottom: var(--space-l);
   color: var(--color-primary-dark);
@@ -680,15 +680,21 @@ p {
   font-weight: 800;
   color: var(--color-primary);
   margin-bottom: var(--space-s);
+  letter-spacing: 0.06em;
 }
 .p-hero__title-main {
   display: block;
+}
+.p-hero__title-main br {
+  line-height: 0;
 }
 .p-hero__title em {
   font-style: normal;
   color: var(--color-coral);
   position: relative;
-  background: linear-gradient(transparent 65%, rgba(251, 200, 61, 0.55) 65%);
+  display: inline-block;
+  padding: 0 0.125rem;
+  background: linear-gradient(transparent 62%, rgba(251, 200, 61, 0.55) 62%);
 }
 .p-hero__lead {
   font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
