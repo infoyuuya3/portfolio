@@ -1,0 +1,83 @@
+:root {
+  // Brand: bright sky-blue + sunny yellow
+  --color-primary: #3eb5f1;
+  --color-primary-dark: #1d92cf;
+  --color-accent: #fbc83d;
+  --color-accent-dark: #e6a821;
+  --color-coral: #ff7a59;
+  --color-grass: #7ac74f;
+  --color-pink: #ff89b3;
+
+  // Text & background
+  --color-text: #1f2a37;
+  --color-text-secondary: rgba(31, 42, 55, 0.68);
+  --color-text-muted: rgba(31, 42, 55, 0.5);
+  --color-bg: #ffffff;
+  --color-bg-soft: #f0f9ff;
+  --color-bg-card: #ffffff;
+  --color-bg-sky: #c0e6fb;
+  --color-bg-sky-dark: #74c8ee;
+  --color-border: rgba(31, 42, 55, 0.1);
+  --color-border-strong: rgba(31, 42, 55, 0.2);
+
+  // Spacing
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-xxl: 4.5rem;
+  --space-xxxl: 7rem;
+
+  // Radius
+  --radius-s: 0.5rem;
+  --radius-m: 1rem;
+  --radius-l: 1.5rem;
+  --radius-pill: 999px;
+
+  // Shadow
+  --shadow-1: 0 2px 6px rgba(20, 80, 140, 0.06), 0 1px 2px rgba(20, 80, 140, 0.08);
+  --shadow-2: 0 6px 18px rgba(20, 80, 140, 0.1), 0 2px 4px rgba(20, 80, 140, 0.06);
+  --shadow-3: 0 14px 36px rgba(20, 80, 140, 0.14), 0 4px 10px rgba(20, 80, 140, 0.08);
+
+  // Motion
+  --duration-fast: 0.15s;
+  --duration-base: 0.25s;
+  --duration-slow: 0.4s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  // Typography
+  --font-jp: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", Arial, "Noto Sans JP", Meiryo, sans-serif;
+}
+
+body {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 4.25rem;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  line-height: 1.45;
+  font-weight: 800;
+}
+
+p {
+  letter-spacing: normal;
+  font-feature-settings: normal;
+  line-height: 1.85;
+}
+
+::selection {
+  background-color: rgba(62, 181, 241, 0.25);
+  color: var(--color-text);
+}
